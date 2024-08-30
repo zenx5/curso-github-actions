@@ -1,0 +1,23 @@
+name: Trigers
+run-name: Aprendiendo triggers
+on:
+  push:
+    branches:
+      - main
+  worflow_dispatch:
+    inputs:
+      usuario:
+        descriptions: 'Usuario de github'
+        required: true
+        type: string
+  issue_comment:
+    types: [created]
+jobs:
+  steps:
+    hola-mundo:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Saludar
+        run: echo "Hola ${{ inputs.usuario }}" 
+    
+

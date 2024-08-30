@@ -11,7 +11,5 @@ jobs:
         uses: actions/checkout@v2
       - name: Install node
         uses: actions/setup-node
-      - name: Add enviroment
-        run: echo "NAME=${{ github.actor }}" >> .env
       - name: Correr script
-        run: node --env-file=.env holamundo.js
+        run: node holamundo.js
